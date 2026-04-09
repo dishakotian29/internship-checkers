@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Checker</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+        }
+
+        .box {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            background: purple;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Internship Eligibility Checker</h2>
+
+    <input type="number" id="cgpa" placeholder="Enter CGPA"><br>
+    <input type="number" id="attendance" placeholder="Attendance %"><br>
+    <input type="text" id="backlog" placeholder="Backlogs? (yes/no)"><br>
+
+    <button onclick="check()">Check</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+function check() {
+    let cgpa = document.getElementById("cgpa").value;
+    let attendance = document.getElementById("attendance").value;
+    let backlog = document.getElementById("backlog").value.toLowerCase();
+
+    if (cgpa >= 7 && attendance >= 75 && backlog === "no") {
+        document.getElementById("result").innerText = "✅ Eligible";
+    } else {
+        document.getElementById("result").innerText = "❌ Not Eligible";
+    }
+}
+</script>
+
+</body>
+</html>
